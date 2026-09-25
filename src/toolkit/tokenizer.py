@@ -1,4 +1,4 @@
-from src.toolkit.errors import ToolkitTokenizerError
+from toolkit.errors import ToolkitTokenizerError
 
 
 def tokenize(expression: str) -> list[str]:

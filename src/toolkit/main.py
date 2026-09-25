@@ -2,6 +2,7 @@ import typer
 
 from toolkit.calculator import calculate
 from toolkit.converter import convert as convert_value
+from toolkit.errors import ToolkitError
 from toolkit.tokenizer import tokenize
 
 app = typer.Typer()
@@ -19,7 +20,7 @@ def calc(ctx: typer.Context):
     try:
         tokens = tokenize(expression)
         result = calculate(tokens)
-    except ValueError as error:
+    except ToolkitError as error:
         typer.echo(str(error), err=True)
         raise typer.Exit(code=2)
 
@@ -38,7 +39,7 @@ def convert(
         from_unit: str = typer.Option(..., "--from"),
         to_unit: str = typer.Option(..., "--to"),
 ):
-    """Преобразование значения между единицами измерения."""
+    """Преобразовать значение между единицами измерения."""
     if value is None:
         if not ctx.args:
             typer.echo("Missing value", err=True)
@@ -52,8 +53,8 @@ def convert(
 
     try:
         result = convert_value(value, from_unit, to_unit)
-    except ValueError as error:
+    except ToolkitError as error:
         typer.echo(str(error), err=True)
         raise typer.Exit(code=2)
 
-    print(result)
+    typer.echo(result)

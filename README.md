@@ -42,7 +42,7 @@ source .venv/bin/activate
 Затем проект устанавливается в созданное окружение:
 
 ```bash
-python3 -m pip install -e .
+python3 -m pip install -e ".[dev]"
 ```
 
 После установки можно проверить доступные команды:

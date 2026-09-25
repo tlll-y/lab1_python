@@ -1,14 +1,18 @@
-class ToolkitValidationError(Exception):
-    """Exception for toolkit validation error"""
+class ToolkitError(Exception):
+    """Базовая ошибка приложения toolkit."""
 
 
-class ToolkitTokenizerError(Exception):
-    """Exception for toolkit tokenization error"""
+class ToolkitValidationError(ToolkitError):
+    """Ошибка проверки арифметического выражения."""
 
 
-class ToolkitCalculateError(Exception):
-    """Exception for toolkit calculation error"""
+class ToolkitTokenizerError(ToolkitError):
+    """Ошибка разбиения выражения на токены."""
 
 
-class ToolkitConverterError(Exception):
-    """Exception for toolkit calculation error"""
+class ToolkitCalculateError(ToolkitError):
+    """Ошибка вычисления арифметического выражения."""
+
+
+class ToolkitConverterError(ToolkitError):
+    """Ошибка преобразования единиц измерения."""

@@ -1,4 +1,4 @@
-from src.toolkit.errors import ToolkitCalculateError
+from toolkit.errors import ToolkitCalculateError
 from toolkit.validator import validate_tokens
 
 
@@ -42,7 +42,7 @@ def calculate(tokens: list[str]) -> float:
         operator = operators[index]
 
         if operator in "*/":
-            left = values[index + 0]
+            left = values[index]
             right = values[index + 1]
             if operator == "*":
                 result = left * right

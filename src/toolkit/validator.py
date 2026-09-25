@@ -1,4 +1,4 @@
-from src.toolkit.errors import ToolkitValidationError
+from toolkit.errors import ToolkitValidationError
 
 
 def validate_tokens(tokens: list[str]) -> None:

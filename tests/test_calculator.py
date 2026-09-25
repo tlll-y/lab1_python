@@ -1,9 +1,9 @@
-from src.toolkit.errors import (
+from toolkit.calculator import calculate
+from toolkit.errors import (
     ToolkitCalculateError,
     ToolkitTokenizerError,
     ToolkitValidationError,
 )
-from toolkit.calculator import calculate
 from toolkit.tokenizer import tokenize
 from toolkit.validator import validate_tokens
 

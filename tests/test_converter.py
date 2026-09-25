@@ -1,7 +1,7 @@
 import pytest
 
-from src.toolkit.errors import ToolkitConverterError
 from toolkit.converter import convert
+from toolkit.errors import ToolkitConverterError
 
 
 def test_convert_centimeters_to_meters():
